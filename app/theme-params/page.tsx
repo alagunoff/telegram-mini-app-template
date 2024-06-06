@@ -1,3 +1,5 @@
+"use client";
+
 import { useThemeParams } from "@tma.js/sdk-react";
 
 import { DisplayData } from "@/app/_components/DisplayData/DisplayData";
