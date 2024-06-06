@@ -1,3 +1,5 @@
+"use client";
+
 import { useUtils, classNames } from "@tma.js/sdk-react";
 import {
   type LinkProps as NextLinkProps,

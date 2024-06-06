@@ -13,28 +13,10 @@ import {
   isSSR,
 } from "@tma.js/sdk-react";
 import { TonConnectUIProvider } from "@tonconnect/ui-react";
-import type { AppProps } from "next/app";
 import { useRouter, usePathname } from "next/navigation";
 import { type FC, useEffect, useMemo } from "react";
 
-import { ErrorBoundary } from "./_components/ErrorBoundary";
-
 import "./globals.css";
-
-const ErrorBoundaryError: FC<{ error: unknown }> = ({ error }) => (
-  <div>
-    <p>An unhandled error occurred:</p>
-    <blockquote>
-      <code>
-        {error instanceof Error
-          ? error.message
-          : typeof error === "string"
-            ? error
-            : JSON.stringify(error)}
-      </code>
-    </blockquote>
-  </div>
-);
 
 const BackButtonManipulator: FC = () => {
   const router = useRouter();
@@ -61,7 +43,11 @@ const BackButtonManipulator: FC = () => {
   return null;
 };
 
-const App: FC<AppProps> = ({ pageProps, Component }) => {
+function Container({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   const miniApp = useMiniApp(true);
   const themeParams = useThemeParams(true);
   const viewport = useViewport(true);
@@ -78,15 +64,14 @@ const App: FC<AppProps> = ({ pageProps, Component }) => {
     return viewport && bindViewportCSSVars(viewport);
   }, [viewport]);
 
-  return (
-    <>
-      <BackButtonManipulator />
-      <Component {...pageProps} />
-    </>
-  );
-};
+  return children;
+}
 
-const Inner: FC<AppProps> = (props) => {
+export default function Layout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   const debug = useMemo(() => {
     return isSSR() ? false : retrieveLaunchParams().startParam === "debug";
   }, []);
@@ -105,16 +90,9 @@ const Inner: FC<AppProps> = (props) => {
   return (
     <TonConnectUIProvider manifestUrl={manifestUrl}>
       <SDKProvider acceptCustomStyles debug={debug}>
-        <App {...props} />
+        <BackButtonManipulator />
+        <Container>{children}</Container>
       </SDKProvider>
     </TonConnectUIProvider>
-  );
-};
-
-export default function CustomApp(props: AppProps) {
-  return (
-    <ErrorBoundary fallback={ErrorBoundaryError}>
-      <Inner {...props} />
-    </ErrorBoundary>
   );
 }

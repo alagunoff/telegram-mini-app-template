@@ -43,5 +43,5 @@ module.exports = {
       },
     ],
   },
-  ignorePatterns: [".next/**", "*.js"],
+  ignorePatterns: ["*.js"],
 };
