@@ -1,3 +1,5 @@
+"use client";
+
 import { useUtils } from "@tma.js/sdk-react";
 import { TonConnectButton, useTonWallet } from "@tonconnect/ui-react";
 import type { ReactNode } from "react";

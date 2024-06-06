@@ -1,3 +1,5 @@
+"use client";
+
 import { retrieveLaunchParams } from "@tma.js/sdk-react";
 import { useMemo } from "react";
 
