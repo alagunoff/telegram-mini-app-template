@@ -54,7 +54,7 @@ function App({
     });
   }, [backButton, router]);
 
-  return children;
+  return <main className="px-2.5">{children}</main>;
 }
 
 export default App;
