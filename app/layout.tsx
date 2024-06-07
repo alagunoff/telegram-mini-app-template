@@ -19,7 +19,7 @@ function Layout({
     >
       <body>
         <TonConnectUIProvider
-          manifestUrl="https://raw.githubusercontent.com/ton-community/tutorials/main/03-client/test/public/tonconnect-manifest.json"
+          manifestUrl="/tonconnect-manifest.json"
           actionsConfiguration={{
             twaReturnUrl: "https://t.me/alagunoff_bot/test",
           }}
