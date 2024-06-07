@@ -19,7 +19,7 @@ function Layout({
     >
       <body>
         <TonConnectUIProvider
-          manifestUrl="/tonconnect-manifest.json"
+          manifestUrl="https://telegram-mini-app-template.vercel.app/tonconnect-manifest.json"
           actionsConfiguration={{
             twaReturnUrl: "https://t.me/alagunoff_bot/test",
           }}
