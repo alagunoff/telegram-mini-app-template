@@ -13,9 +13,17 @@ function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className={`text-[16px] ${GeistSans.className}`} lang="en">
+    <html
+      className={`text-[16px] leading-[24px] ${GeistSans.className}`}
+      lang="en"
+    >
       <body>
-        <TonConnectUIProvider manifestUrl="https://raw.githubusercontent.com/ton-community/tutorials/main/03-client/test/public/tonconnect-manifest.json">
+        <TonConnectUIProvider
+          manifestUrl="https://raw.githubusercontent.com/ton-community/tutorials/main/03-client/test/public/tonconnect-manifest.json"
+          actionsConfiguration={{
+            twaReturnUrl: "https://t.me/alagunoff_bot/test",
+          }}
+        >
           <SDKProvider>
             <App>{children}</App>
           </SDKProvider>

@@ -54,7 +54,11 @@ function App({
     });
   }, [backButton, router]);
 
-  return <main className="px-2.5">{children}</main>;
+  return (
+    <main className="px-2.5" style={{ color: themeParams?.textColor }}>
+      {children}
+    </main>
+  );
 }
 
 export default App;
