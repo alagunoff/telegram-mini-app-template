@@ -1,6 +1,6 @@
 {
   "name": "telegram-mini-app-template",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "engines": {
     "node": "20.14.0"
