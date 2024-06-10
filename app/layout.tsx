@@ -4,9 +4,10 @@ import { SDKProvider } from "@tma.js/sdk-react";
 import { TonConnectUIProvider } from "@tonconnect/ui-react";
 import classNames from "classnames";
 import { GeistSans } from "geist/font/sans";
+import dynamic from "next/dynamic";
 
+const App = dynamic(() => import("./_App"), { ssr: false });
 import "./_globals.css";
-import App from "./_App";
 
 function Layout({
   children,
