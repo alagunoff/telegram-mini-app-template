@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  useMiniApp,
-  useThemeParams,
-  useViewport,
-  useBackButton,
-  bindMiniAppCSSVars,
-  bindThemeParamsCSSVars,
-  bindViewportCSSVars,
-} from "@tma.js/sdk-react";
+import { useThemeParams, useBackButton } from "@tma.js/sdk-react";
 import { useRouter, usePathname } from "next/navigation";
 import { useEffect } from "react";
 
@@ -17,24 +9,10 @@ function App({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const miniApp = useMiniApp(true);
-  const themeParams = useThemeParams(true);
-  const viewport = useViewport(true);
-  const backButton = useBackButton(true);
   const pathname = usePathname();
   const router = useRouter();
-
-  useEffect(() => {
-    return miniApp && themeParams && bindMiniAppCSSVars(miniApp, themeParams);
-  }, [miniApp, themeParams]);
-
-  useEffect(() => {
-    return themeParams && bindThemeParamsCSSVars(themeParams);
-  }, [themeParams]);
-
-  useEffect(() => {
-    return viewport && bindViewportCSSVars(viewport);
-  }, [viewport]);
+  const themeParams = useThemeParams(true);
+  const backButton = useBackButton(true);
 
   useEffect(() => {
     if (!backButton) {
@@ -55,7 +33,7 @@ function App({
   }, [backButton, router]);
 
   return (
-    <main className="px-2.5" style={{ color: themeParams?.textColor }}>
+    <main className="px-3 py-4" style={{ color: themeParams?.textColor }}>
       {children}
     </main>
   );

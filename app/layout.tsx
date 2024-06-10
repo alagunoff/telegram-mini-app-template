@@ -2,6 +2,7 @@
 
 import { SDKProvider } from "@tma.js/sdk-react";
 import { TonConnectUIProvider } from "@tonconnect/ui-react";
+import classNames from "classnames";
 import { GeistSans } from "geist/font/sans";
 
 import "./_globals.css";
@@ -13,10 +14,7 @@ function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      className={`text-[16px] leading-[24px] ${GeistSans.className}`}
-      lang="en"
-    >
+    <html className={classNames("text-[16px]", GeistSans.className)} lang="en">
       <body>
         <TonConnectUIProvider
           manifestUrl="https://telegram-mini-app-template.vercel.app/tonconnect-manifest.json"
