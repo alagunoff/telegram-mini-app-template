@@ -126,14 +126,16 @@ function Page() {
           <>
             {"imageUrl" in wallet && (
               <div className="mb-3 flex gap-x-4">
-                <Image
-                  className="rounded"
-                  src={wallet.imageUrl}
-                  width={60}
-                  height={60}
-                  alt={`${wallet.name} logo`}
-                  priority
-                />
+                <div className="relative size-14">
+                  <Image
+                    className="rounded"
+                    src={wallet.imageUrl}
+                    priority
+                    fill
+                    objectFit="contain"
+                    alt={`${wallet.name} logo`}
+                  />
+                </div>
                 <div>
                   <p className="text-xl font-bold">
                     {wallet.name}{" "}
