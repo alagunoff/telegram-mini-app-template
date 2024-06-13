@@ -11,7 +11,7 @@ import classNames from "classnames";
 import Image from "next/image";
 
 function Page() {
-  const launchParams = useLaunchParams();
+  const launchParams = useLaunchParams(true);
   const initData = useInitData(true);
   const themeParams = useThemeParams(true);
   const utils = useUtils(true);
