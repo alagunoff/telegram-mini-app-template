@@ -87,12 +87,12 @@ function Page() {
         <ul className="list-outside list-disc space-y-1 pl-5">
           <li>
             The name of the platform of the user&apos;s Telegram app:
-            <span className="font-medium"> {launchParams.platform}</span>
+            <span className="font-medium"> {launchParams?.platform}</span>
           </li>
           <li>
             The version of the Bot API available in the user&apos;s Telegram
             app:
-            <span className="font-medium"> {launchParams.version}</span>
+            <span className="font-medium"> {launchParams?.version}</span>
           </li>
         </ul>
       </section>
