@@ -5,7 +5,7 @@ import {
   useInitData,
   useThemeParams,
   useUtils,
-} from "@tma.js/sdk-react";
+} from "@telegram-apps/sdk-react";
 import { useTonWallet, TonConnectButton } from "@tonconnect/ui-react";
 import classNames from "classnames";
 import Image from "next/image";
@@ -60,7 +60,7 @@ function Page() {
                 );
               }}
             >
-              @tma.js/sdk-react
+              @telegram-apps/sdk-react
             </button>{" "}
             for communication with Telegram client
           </li>

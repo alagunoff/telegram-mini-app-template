@@ -1,6 +1,6 @@
 "use client";
 
-import { SDKProvider } from "@tma.js/sdk-react";
+import { SDKProvider } from "@telegram-apps/sdk-react";
 import { TonConnectUIProvider } from "@tonconnect/ui-react";
 import classNames from "classnames";
 import { GeistSans } from "geist/font/sans";
