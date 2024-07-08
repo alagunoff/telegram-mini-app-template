@@ -56,7 +56,7 @@ function Page() {
               type="button"
               onClick={() => {
                 utils?.openLink(
-                  "https://github.com/Telegram-Mini-Apps/tma.js/tree/master/packages/sdk-react",
+                  "https://docs.telegram-mini-apps.com/packages/telegram-apps-sdk-react",
                 );
               }}
             >
