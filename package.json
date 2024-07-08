@@ -17,7 +17,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@tma.js/sdk-react": "2.2.7",
+    "@tma.js/sdk-react": "2.2.8",
     "@tonconnect/ui-react": "2.0.5",
     "classnames": "2.5.1",
     "geist": "1.3.0",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "14.2.4",
-    "@types/node": "20.14.9",
+    "@types/node": "20.14.10",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
     "@typescript-eslint/eslint-plugin": "7.15.0",
